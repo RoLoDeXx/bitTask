@@ -1,13 +1,74 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.main {
+  background-image: url("./bg.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 100vh;
+  padding-left: 10rem;
+  padding-right: 10rem;
 }
+
+.wrapper {
+  height: 100vh;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.wrapper .grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+.section-paper {
+  height: 88vh;
+  overflow: auto;
+}
+
+.font-architect {
+  font-family: "Architects Daughter";
+  font-size: 2rem;
+}
+
+.no-chat img {
+  width: 60%;
+}
+
+@media only screen and (max-width: 992px) {
+  .main {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .container,
+  .main,
+  .wrapper {
+    padding: 0 !important;
+  }
+
+  .wrapper .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .no-chat img {
+    width: 100%;
+  }
+}
+
+/*
+.container {
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+} */
