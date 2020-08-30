@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Typography, Divider, IconButton } from "@material-ui/core";
+import UserContext from "../../contexts/UserContext";
 import CloseOutlinedIcon from "@material-ui/icons/CloseOutlined";
-const Details = () => {
+
+const Details = ({ name }) => {
+  const { setName } = useContext(UserContext);
+
   const handleCloseChat = () => {
-    alert("make person title to '' and if sm pop up modal");
+    setName("");
   };
 
   return (
@@ -14,11 +18,11 @@ const Details = () => {
           color="initial"
           className="font-montserrat font-weight-bold"
         >
-          Lorem
+          {name}
         </Typography>
 
-        <IconButton aria-label="search">
-          <CloseOutlinedIcon onClick={handleCloseChat} />
+        <IconButton aria-label="search" onClick={handleCloseChat}>
+          <CloseOutlinedIcon />
         </IconButton>
       </div>
       <Divider />

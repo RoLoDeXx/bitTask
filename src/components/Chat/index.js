@@ -1,11 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useContext } from "react";
 import SentimentDissatisfiedIcon from "@material-ui/icons/SentimentDissatisfied";
 import Actions from "./Actions";
 import Details from "./Details";
 import Message from "./Message";
 import { makeStyles } from "@material-ui/core/styles";
+import UserContext from "../../contexts/UserContext";
 
-const Chat = ({ name }) => {
+const Chat = () => {
   const useStyles = makeStyles((theme) => ({
     title: {
       flexGrow: 1,
@@ -20,20 +21,20 @@ const Chat = ({ name }) => {
   }));
   const classes = useStyles();
 
-  useEffect(() => {
-    return () => {};
-  }, []);
-
-  // const renderChat = chats.map((e) => (
-  //   <Message sentByMe={e % 2 === 0}></Message>
-  // ));
+  const { name, chats } = useContext(UserContext);
+  // console.log(chats);
+  const renderChat = chats.map((chat) => (
+    <Message
+      sentByMe={chat.name.length % 2 === 0}
+      key={chat.id}
+      body={chat.name}
+    ></Message>
+  ));
 
   return name.length ? (
     <div className={"d-flex flex-column " + classes.chatWrap}>
-      <Details name="Lorem Ipsum"></Details>
-      <div className="flex-grow-1 h-100 overflow-auto">
-        {/* {renderChat} */}
-      </div>
+      <Details name={name}></Details>
+      <div className="flex-grow-1 h-100 overflow-auto">{renderChat}</div>
       <Actions></Actions>
     </div>
   ) : (

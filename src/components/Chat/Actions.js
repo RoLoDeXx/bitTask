@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { IconButton, Divider, Paper, InputBase } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";

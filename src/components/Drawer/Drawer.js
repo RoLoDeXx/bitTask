@@ -19,7 +19,7 @@ const Drawer = () => {
   const renderRecents = dummy.map((item) => (
     <Contact
       name={item.username}
-      imgSrc={faker.random.image()}
+      imgSrc={faker.image.imageUrl(item.username.length * 10)}
       date={faker.date.weekday()}
       key={item.id}
       id={item.id}

@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import API from "../placeholders/jsonPlaceholder";
-
+import UserContext from "../../contexts/UserContext";
 const useStyles = makeStyles((theme) => ({
   img: {
     height: "3rem",
@@ -24,14 +24,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const loadChat = async (id) => {
-  let res = await API.get(`/posts/${id}/comments`);
-  console.log(res.data);
-  // update state here
-};
-
 const Contact = ({ name, imgSrc, id }) => {
+  const { setName, setChats } = useContext(UserContext);
+
   const classes = useStyles();
+
+  const loadChat = async (id) => {
+    let res = await API.get(`/posts/${id}/comments`);
+    // console.log(res.data);
+    // // update state here
+    await setName(name);
+    await setChats(res.data);
+  };
+
   return (
     <div
       className={"border-bottom p-3 " + classes.root}
