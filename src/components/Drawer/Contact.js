@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
 const Contact = ({ name, imgSrc }) => {
   const classes = useStyles();
   return (
-    <div className={"border-bottom p-4 " + classes.root}>
+    <div className={"border-bottom p-3 " + classes.root}>
       <div className="d-flex align-items-start">
         <img className={classes.img} src={imgSrc} alt="logo" />
         <div className="ml-3">
