@@ -31,8 +31,6 @@ const Contact = ({ name, imgSrc, id }) => {
 
   const loadChat = async (id) => {
     let res = await API.get(`/posts/${id}/comments`);
-    // console.log(res.data);
-    // // update state here
     await setName(name);
     await setChats(res.data);
   };

@@ -22,14 +22,20 @@ const Chat = () => {
   const classes = useStyles();
 
   const { name, chats } = useContext(UserContext);
-  // console.log(chats);
-  const renderChat = chats.map((chat) => (
-    <Message
-      sentByMe={chat.name.length % 2 === 0}
-      key={chat.id}
-      body={chat.name}
-    ></Message>
-  ));
+  const renderChat = chats.map((chat) => {
+    if (!chat.byMe)
+      return (
+        <Message
+          sentByMe={chat.name.length % 2 === 0}
+          key={chat.id}
+          body={chat.name}
+        ></Message>
+      );
+    else
+      return (
+        <Message sentByMe={chat.byMe} key={chat.id} body={chat.body}></Message>
+      );
+  });
 
   return name.length ? (
     <div className={"d-flex flex-column " + classes.chatWrap}>

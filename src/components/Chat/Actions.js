@@ -1,9 +1,12 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { IconButton, Divider, Paper, InputBase } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
+import UserContext from "../../contexts/UserContext";
 
 const Actions = () => {
+  const { chats, setChats } = useContext(UserContext);
+
   const useStyles = makeStyles((theme) => ({
     root: {
       padding: "2px 4px",
@@ -22,16 +25,34 @@ const Actions = () => {
   }));
   const classes = useStyles();
 
+  const [query, setQuery] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setChats([...chats, { byMe: true, body: query }]);
+    setQuery("");
+  };
+
   return (
     <div>
       <Divider />
-      <Paper className={classes.root}>
+      <Paper
+        component="form"
+        onSubmit={(e) => handleSubmit(e)}
+        className={classes.root}
+      >
         <InputBase
           className={classes.input}
           placeholder="Send a message..."
           inputProps={{ "aria-label": "search google maps" }}
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
         />
-        <IconButton className={classes.iconButton} aria-label="send message">
+        <IconButton
+          type="submit"
+          className={classes.iconButton}
+          aria-label="send message"
+        >
           <SendIcon />
         </IconButton>
       </Paper>
