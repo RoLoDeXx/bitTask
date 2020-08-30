@@ -24,14 +24,16 @@ const Chat = ({ name }) => {
     return () => {};
   }, []);
 
-  let chats = [];
-
-  const renderChat = chats.map(() => <Message></Message>);
+  // const renderChat = chats.map((e) => (
+  //   <Message sentByMe={e % 2 === 0}></Message>
+  // ));
 
   return name.length ? (
     <div className={"d-flex flex-column " + classes.chatWrap}>
       <Details name="Lorem Ipsum"></Details>
-      <div className="flex-grow-1 h-100 overflow-auto">{renderChat}</div>
+      <div className="flex-grow-1 h-100 overflow-auto">
+        {/* {renderChat} */}
+      </div>
       <Actions></Actions>
     </div>
   ) : (

@@ -6,21 +6,15 @@ const useStyles = makeStyles((theme) => ({
     textAlign: "right",
     background: "#7462f2dd",
     color: "white",
-    float: "right",
-    borderRadius: "5px",
+    borderRadius: "50px",
     borderTopRightRadius: "0",
-    marginRight: "5%",
-    marginLeft: "25%",
   },
   receivedMsg: {
     padding: "1rem",
     textAlign: "left",
-    float: "left",
-    borderRadius: "10px",
+    borderRadius: "50px",
     borderTopLeftRadius: "0",
     background: "#7462f222",
-    marginLeft: "5%",
-    marginRight: "25%",
   },
 }));
 
@@ -28,12 +22,17 @@ const Message = ({ time, body, sentByMe }) => {
   const classes = useStyles();
 
   return (
-    <div>
-      <p className={sentByMe === true ? classes.sentMsg : classes.receivedMsg}>
-        lorem sh dajhfjsdhjfjf jhdhfjsahdfsjdhf sjdhgf djshgfjdghhf jsdhfasjhg
-        jsdg fsajhgbf
-      </p>
-    </div>
+    <React.Fragment>
+      {sentByMe === true ? (
+        <div className="mt-3 d-flex flex-row-reverse mr-4">
+          <p className={classes.sentMsg}>{body}</p>
+        </div>
+      ) : (
+        <div className="mt-3 d-flex ml-4">
+          <p className={classes.receivedMsg}>{body}</p>
+        </div>
+      )}
+    </React.Fragment>
   );
 };
 

@@ -11,7 +11,6 @@ const Drawer = () => {
   useEffect(() => {
     const loadData = async () => {
       const res = await API.get("/users");
-      console.log(res.data);
       setDummy(res.data);
     };
     loadData();
@@ -23,6 +22,7 @@ const Drawer = () => {
       imgSrc={faker.random.image()}
       date={faker.date.weekday()}
       key={item.id}
+      id={item.id}
     />
   ));
 
