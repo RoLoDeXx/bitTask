@@ -25,17 +25,13 @@ const Actions = () => {
   return (
     <div>
       <Divider />
-      <Paper component="form" className={classes.root}>
+      <Paper className={classes.root}>
         <InputBase
           className={classes.input}
           placeholder="Send a message..."
           inputProps={{ "aria-label": "search google maps" }}
         />
-        <IconButton
-          type="submit"
-          className={classes.iconButton}
-          aria-label="search"
-        >
+        <IconButton className={classes.iconButton} aria-label="send message">
           <SendIcon />
         </IconButton>
       </Paper>

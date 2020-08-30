@@ -12,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     width: "100%",
     height: "4rem",
+    boxShadow: "none",
   },
   input: {
     marginLeft: theme.spacing(1),
@@ -26,17 +27,16 @@ export default function Search() {
   const classes = useStyles();
 
   return (
-    <Paper component="form" className={classes.root}>
+    <Paper className={classes.root}>
       <InputBase
+        onSubmit={(e) => {
+          e.preventDefault();
+        }}
         className={classes.input}
-        placeholder="Search Joe"
+        placeholder="Search Tint"
         inputProps={{ "aria-label": "search google maps" }}
       />
-      <IconButton
-        type="submit"
-        className={classes.iconButton}
-        aria-label="search"
-      >
+      <IconButton className={classes.iconButton} aria-label="search">
         <SearchIcon />
       </IconButton>
     </Paper>

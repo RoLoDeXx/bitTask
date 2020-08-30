@@ -37,14 +37,50 @@ body {
   font-size: 2rem;
 }
 
+.font-montserrat {
+  font-family: "Montserrat", sans-serif !important;
+}
+
 .no-chat img {
   width: 60%;
 }
 
+svg {
+  color: #7462f2;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #7462f2;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #887cd8;
+}
+
+.logo {
+  width: 3rem;
+}
+
 @media only screen and (max-width: 992px) {
   .main {
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .wrapper .grid {
+    grid-template-columns: 1fr 2fr;
   }
 }
 
@@ -63,12 +99,3 @@ body {
     width: 100%;
   }
 }
-
-/*
-.container {
-  padding: 1.5rem;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  height: inherit;
-} */

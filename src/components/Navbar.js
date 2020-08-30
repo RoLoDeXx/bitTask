@@ -4,17 +4,14 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
+import AddIcon from "@material-ui/icons/Add";
 
 const useStyles = makeStyles((theme) => ({
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
   title: {
     flexGrow: 1,
   },
   navbar: {
-    backgroundColor: "#2a2f32",
+    backgroundColor: "#fff",
   },
 }));
 
@@ -22,19 +19,26 @@ export default function NavBar() {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <AppBar className={classes.navbar} position="static">
+      <AppBar className={classes.navbar + " shadow-sm"} position="static">
         <Toolbar>
-          <IconButton
+          <img src={require("../logo.svg")} className="logo" alt="site-logo" />
+
+          <Typography
+            variant="h6"
+            className={
+              classes.title + " text-dark font-montserrat font-weight-bold"
+            }
+          >
+            TintChat
+          </Typography>
+          {/* <IconButton
             edge="start"
-            className={classes.menuButton}
+            className={classes.menuButton + " d-bnone"}
             color="inherit"
             aria-label="menu"
           >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" className={classes.title}>
-            Joe Chat
-          </Typography>
+            <AddIcon />
+          </IconButton> */}
         </Toolbar>
       </AppBar>
     </div>

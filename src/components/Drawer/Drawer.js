@@ -3,6 +3,7 @@ import Contact from "./Contact";
 import Search from "./Search";
 import faker from "faker";
 import API from "../placeholders/jsonPlaceholder";
+import { Divider } from "@material-ui/core";
 
 const Drawer = () => {
   const [dummy, setDummy] = useState([]);
@@ -28,6 +29,7 @@ const Drawer = () => {
   return (
     <div className="drawer">
       <Search />
+      <Divider />
       {renderRecents}
     </div>
   );

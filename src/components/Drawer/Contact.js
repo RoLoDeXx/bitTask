@@ -15,15 +15,19 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const loadChat = () => {
+  // how do you load chat now ?
+};
+
 const Contact = ({ name, imgSrc }) => {
   const classes = useStyles();
   return (
-    <div className={"border-bottom p-3 " + classes.root}>
+    <div className={"border-bottom p-3 " + classes.root} onClick={loadChat}>
       <div className="d-flex align-items-start">
         <img className={classes.img} src={imgSrc} alt="logo" />
-        <div className="ml-3">
-          <p className="m-0 ">{name}</p>
-          <p className="text-dark">Message</p>
+        <div className="ml-3 ">
+          <p className="m-0 font-montserrat">{name}</p>
+          <p className="text-dark font-montserrat">Message</p>
         </div>
       </div>
     </div>

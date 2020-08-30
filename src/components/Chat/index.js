@@ -11,7 +11,7 @@ const Chat = ({ name }) => {
       flexGrow: 1,
     },
     navbar: {
-      backgroundColor: "#2a2f32",
+      backgroundColor: "#7462f2",
       height: "4rem",
     },
     chatWrap: {

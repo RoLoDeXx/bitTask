@@ -4,7 +4,7 @@ const useStyles = makeStyles((theme) => ({
   sentMsg: {
     padding: "1rem",
     textAlign: "right",
-    background: "#2a2f32dd",
+    background: "#7462f2dd",
     color: "white",
     float: "right",
     borderRadius: "5px",
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     float: "left",
     borderRadius: "10px",
     borderTopLeftRadius: "0",
-    background: "#2a2f3222",
+    background: "#7462f222",
     marginLeft: "5%",
     marginRight: "25%",
   },
