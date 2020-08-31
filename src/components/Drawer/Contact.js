@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Contact = ({ name, imgSrc, id }) => {
-  const { setName, setChats } = useContext(UserContext);
+  const { setName, setChats, setValue } = useContext(UserContext);
 
   const classes = useStyles();
 
@@ -33,6 +33,7 @@ const Contact = ({ name, imgSrc, id }) => {
     let res = await API.get(`/posts/${id}/comments`);
     await setName(name);
     await setChats(res.data);
+    await setValue(false);
   };
 
   return (

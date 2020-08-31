@@ -7,7 +7,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import UserContext from "../../contexts/UserContext";
 
 const Chat = () => {
-  const useStyles = makeStyles((theme) => ({
+  const useStyles = makeStyles(() => ({
     title: {
       flexGrow: 1,
     },
@@ -33,7 +33,11 @@ const Chat = () => {
       );
     else
       return (
-        <Message sentByMe={chat.byMe} key={chat.id} body={chat.body}></Message>
+        <Message
+          sentByMe={chat.byMe}
+          key={Math.floor(Math.random() * 99999 + 50)}
+          body={chat.body}
+        ></Message>
       );
   });
 

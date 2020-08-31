@@ -14,7 +14,6 @@ body {
   height: 100vh;
   padding-left: 10rem;
   padding-right: 10rem;
-  height: 100vh;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
@@ -70,15 +69,18 @@ svg {
   width: 3rem;
 }
 
-@media only screen and (max-width: 992px) {
+@media only screen and (max-width: 1240px) {
+  .wrapper .grid {
+    grid-template-columns: 1fr 2fr;
+  }
   .main {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
+}
 
-  .wrapper .grid {
-    grid-template-columns: 1fr 2fr;
-  }
+.mob-section {
+  height: 94vh;
 }
 
 @media only screen and (max-width: 767px) {
@@ -98,7 +100,4 @@ svg {
   .section-paper {
     height: auto;
   }
-}
-
-@media only screen and (max-width: 600px) {
 }
