@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import SentimentDissatisfiedIcon from "@material-ui/icons/SentimentDissatisfied";
 import Actions from "./Actions";
 import Details from "./Details";
 import Message from "./Message";
@@ -44,21 +43,23 @@ const Chat = () => {
   return name.length ? (
     <div className={"d-flex flex-column " + classes.chatWrap}>
       <Details name={name}></Details>
-      <div className="flex-grow-1 h-100 overflow-auto  chat-section">
+      <div className="flex-grow-1 h-100 overflow-auto chat-section">
         {renderChat}
       </div>
       <Actions></Actions>
     </div>
   ) : (
-    <div className="no-chat">
-      <img
-        className="d-block mx-auto"
-        src={require("../../no-chat.png")}
-        alt="no-chat img"
-      />
-      <p className="text-center font-architect">
-        Things seem pretty lonely here! <SentimentDissatisfiedIcon />
-      </p>
+    <div className="d-flex flex-column justify-content-around h-100">
+      <div className="no-chat p-3">
+        <img
+          className="d-block mx-auto"
+          src={require("../../no-chat.png")}
+          alt="no-chat img"
+        />
+        <p className="text-center font-architect">
+          Things seem pretty lonely here. Tap on a contact to start a chat!
+        </p>
+      </div>
     </div>
   );
 };

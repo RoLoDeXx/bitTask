@@ -35,8 +35,11 @@ const Actions = () => {
   };
 
   useEffect(() => {
-    let cs = document.querySelector(".chat-section");
-    cs.scrollTo(0, cs.scrollHeight);
+    let cs = document.getElementsByClassName("chat-section");
+
+    for (const element of cs) {
+      element.scrollTo(0, element.scrollHeight);
+    }
   }, [chats]);
 
   return (
