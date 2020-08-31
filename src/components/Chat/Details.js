@@ -4,11 +4,12 @@ import UserContext from "../../contexts/UserContext";
 import CloseOutlinedIcon from "@material-ui/icons/CloseOutlined";
 
 const Details = ({ name }) => {
-  const { setName, setValue } = useContext(UserContext);
+  const { setName, setValue, setFilter } = useContext(UserContext);
 
   const handleCloseChat = () => {
     setName("");
     setValue(true);
+    setFilter("");
   };
 
   return (
