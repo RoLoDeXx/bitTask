@@ -1,3 +1,7 @@
+### `Available scripts`
+
+Deployment of this app can be found [https://rolodexx.github.io/-Zomentum/](here)
+
 ### `npm start`
 
 Runs the app in the development mode.<br />
