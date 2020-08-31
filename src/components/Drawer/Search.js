@@ -27,6 +27,10 @@ export default function Search() {
   const classes = useStyles();
   const [query, setQuery] = useState("");
 
+  const handleChange = (e) => {
+    setQuery(e.target.value);
+  };
+
   return (
     <Paper className={classes.root}>
       <InputBase
@@ -37,7 +41,7 @@ export default function Search() {
         placeholder="Search Tint"
         inputProps={{ "aria-label": "search google maps" }}
         value={query}
-        onChange={(e) => setQuery(e.target.value)}
+        onChange={(e) => handleChange(e)}
       />
       <IconButton className={classes.iconButton} aria-label="search">
         <SearchIcon />

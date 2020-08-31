@@ -56,8 +56,12 @@ const Chat = () => {
           src={require("../../no-chat.png")}
           alt="no-chat img"
         />
-        <p className="text-center font-architect">
-          Things seem pretty lonely here. Tap on a contact to start a chat!
+        <h3 className="text-center font-montserrat">
+          Things seem pretty lonely here.
+        </h3>
+        <p className="text-center font-montserrat">
+          {" "}
+          Tap on a contact to start a chat!
         </p>
       </div>
     </div>
