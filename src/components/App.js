@@ -18,12 +18,13 @@ const App = () => {
   const [name, setName] = React.useState("");
   const [chats, setChats] = React.useState([]);
   const [value, setValue] = React.useState(true);
+  const [filter, setFilter] = React.useState("");
 
   return (
     <div className="main d-flex flex-column wrapper">
       <NavBar />
       <UserContext.Provider
-        value={{ name, setName, chats, setChats, setValue }}
+        value={{ name, setName, chats, setChats, setValue, filter, setFilter }}
       >
         <div className="grid shadow bg-white flex-grow-1">
           <div className="section-paper rounded-0 d-none d-md-block">

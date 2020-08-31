@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Contact from "./Contact";
 import Search from "./Search";
 import faker from "faker";
 import API from "../placeholders/jsonPlaceholder";
 import { Divider } from "@material-ui/core";
+import UserContext from "../../contexts/UserContext";
 
 const Drawer = () => {
+  const { filter } = useContext(UserContext);
   const [dummy, setDummy] = useState([]);
 
   useEffect(() => {
@@ -16,15 +18,16 @@ const Drawer = () => {
     loadData();
   }, []);
 
-  const renderRecents = dummy.map((item) => (
-    <Contact
-      name={item.username}
-      imgSrc={faker.image.imageUrl(item.username.length * 10)}
-      date={faker.date.weekday()}
-      key={item.id}
-      id={item.id}
-    />
-  ));
+  const renderRecents = dummy
+    .filter((item) => item.username.includes(filter))
+    .map((filtItem) => (
+      <Contact
+        name={filtItem.username}
+        imgSrc={faker.image.imageUrl(filtItem.username.length * 10)}
+        key={filtItem.id}
+        id={filtItem.id}
+      />
+    ));
 
   return (
     <div className="drawer">

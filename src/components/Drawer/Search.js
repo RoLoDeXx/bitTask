@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import InputBase from "@material-ui/core/InputBase";
 import IconButton from "@material-ui/core/IconButton";
 import SearchIcon from "@material-ui/icons/Search";
+import UserContext from "../../contexts/UserContext";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,12 +25,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Search() {
+  const { setFilter } = useContext(UserContext);
   const classes = useStyles();
   const [query, setQuery] = useState("");
-
-  const handleChange = (e) => {
-    setQuery(e.target.value);
-  };
 
   return (
     <Paper className={classes.root}>
@@ -41,7 +39,10 @@ export default function Search() {
         placeholder="Search Tint"
         inputProps={{ "aria-label": "search google maps" }}
         value={query}
-        onChange={(e) => handleChange(e)}
+        onChange={(e) => {
+          setQuery(e.target.value);
+          setFilter(e.target.value);
+        }}
       />
       <IconButton className={classes.iconButton} aria-label="search">
         <SearchIcon />
