@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { IconButton, Divider, Paper, InputBase } from "@material-ui/core";
 import SendIcon from "@material-ui/icons/Send";
@@ -29,9 +29,15 @@ const Actions = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (!query.length) return;
     setChats([...chats, { byMe: true, body: query }]);
     setQuery("");
   };
+
+  useEffect(() => {
+    let cs = document.querySelector(".chat-section");
+    cs.scrollTo(0, cs.scrollHeight);
+  }, [chats]);
 
   return (
     <div>

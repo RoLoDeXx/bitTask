@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import InputBase from "@material-ui/core/InputBase";
@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Search() {
   const classes = useStyles();
+  const [query, setQuery] = useState("");
 
   return (
     <Paper className={classes.root}>
@@ -35,6 +36,8 @@ export default function Search() {
         className={classes.input}
         placeholder="Search Tint"
         inputProps={{ "aria-label": "search google maps" }}
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
       />
       <IconButton className={classes.iconButton} aria-label="search">
         <SearchIcon />

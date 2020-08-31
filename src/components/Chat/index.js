@@ -44,7 +44,9 @@ const Chat = () => {
   return name.length ? (
     <div className={"d-flex flex-column " + classes.chatWrap}>
       <Details name={name}></Details>
-      <div className="flex-grow-1 h-100 overflow-auto">{renderChat}</div>
+      <div className="flex-grow-1 h-100 overflow-auto  chat-section">
+        {renderChat}
+      </div>
       <Actions></Actions>
     </div>
   ) : (
