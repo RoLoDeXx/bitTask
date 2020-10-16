@@ -1,6 +1,6 @@
 ### `About this project`
 
-Deployment of this app can be found [on this link](https://rolodexx.github.io/-Zomentum/)
+Deployment of this app can be found [on this link](http://RoLoDeXx.github.io/bitTask)
 
 ### `Tech`
 
