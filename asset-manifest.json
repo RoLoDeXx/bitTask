@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/bitTask/static/css/main.6c7c4af2.chunk.css",
-    "main.js": "/bitTask/static/js/main.c54a62ab.chunk.js",
-    "main.js.map": "/bitTask/static/js/main.c54a62ab.chunk.js.map",
+    "main.js": "/bitTask/static/js/main.61b22f9b.chunk.js",
+    "main.js.map": "/bitTask/static/js/main.61b22f9b.chunk.js.map",
     "runtime-main.js": "/bitTask/static/js/runtime-main.3b570e8a.js",
     "runtime-main.js.map": "/bitTask/static/js/runtime-main.3b570e8a.js.map",
     "static/js/2.8780e5bd.chunk.js": "/bitTask/static/js/2.8780e5bd.chunk.js",
     "static/js/2.8780e5bd.chunk.js.map": "/bitTask/static/js/2.8780e5bd.chunk.js.map",
     "index.html": "/bitTask/index.html",
-    "precache-manifest.7f8ae3f11b8de558a48d0f8cad7ea91e.js": "/bitTask/precache-manifest.7f8ae3f11b8de558a48d0f8cad7ea91e.js",
+    "precache-manifest.f31edaefd138889c1337d0def629a37e.js": "/bitTask/precache-manifest.f31edaefd138889c1337d0def629a37e.js",
     "service-worker.js": "/bitTask/service-worker.js",
     "static/css/main.6c7c4af2.chunk.css.map": "/bitTask/static/css/main.6c7c4af2.chunk.css.map",
     "static/js/2.8780e5bd.chunk.js.LICENSE.txt": "/bitTask/static/js/2.8780e5bd.chunk.js.LICENSE.txt",
@@ -20,6 +20,6 @@
     "static/js/runtime-main.3b570e8a.js",
     "static/js/2.8780e5bd.chunk.js",
     "static/css/main.6c7c4af2.chunk.css",
-    "static/js/main.c54a62ab.chunk.js"
+    "static/js/main.61b22f9b.chunk.js"
   ]
 }
