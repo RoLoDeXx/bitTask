@@ -2,7 +2,7 @@
   "name": "task",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://RoLoDeXx.github.io/-Zomentum",
+  "homepage": "http://RoLoDeXx.github.io/bitTask",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
@@ -40,5 +40,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "g-pages": "^0.1.1"
   }
 }
