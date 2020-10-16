@@ -1,19 +1,17 @@
 import React, { useState, useContext, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { IconButton, Divider, Paper, InputBase } from "@material-ui/core";
-import SendIcon from "@material-ui/icons/Send";
-import UserContext from "../../contexts/UserContext";
+import { IconButton, Divider, Paper } from "@material-ui/core";
+import CameraIcon from "@material-ui/icons/Camera";
+import MicIcon from "@material-ui/icons/Mic";
 
 const Actions = () => {
-  const { chats, setChats } = useContext(UserContext);
-
   const useStyles = makeStyles((theme) => ({
     root: {
       padding: "2px 4px",
       display: "flex",
       alignItems: "center",
       width: "100%",
-      height: "4rem",
+      // height: "4rem",
     },
     input: {
       marginLeft: theme.spacing(1),
@@ -25,45 +23,26 @@ const Actions = () => {
   }));
   const classes = useStyles();
 
-  const [query, setQuery] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!query.length) return;
-    setChats([...chats, { byMe: true, body: query }]);
-    setQuery("");
-  };
-
-  useEffect(() => {
-    let cs = document.getElementsByClassName("chat-section");
-
-    for (const element of cs) {
-      element.scrollTo(0, element.scrollHeight);
-    }
-  }, [chats]);
-
   return (
     <div>
       <Divider />
-      <Paper
-        component="form"
-        onSubmit={(e) => handleSubmit(e)}
-        className={classes.root}
-      >
-        <InputBase
-          className={classes.input}
-          placeholder="Send a message..."
-          inputProps={{ "aria-label": "search google maps" }}
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-        />
-        <IconButton
-          type="submit"
-          className={classes.iconButton}
-          aria-label="send message"
-        >
-          <SendIcon />
-        </IconButton>
+      <Paper className={classes.root}>
+        <div className="d-block mx-auto">
+          <IconButton
+            type="submit"
+            className={classes.iconButton + " mx-auto"}
+            aria-label="send message"
+          >
+            <MicIcon />
+          </IconButton>
+          <IconButton
+            type="submit"
+            className={classes.iconButton + " mx-auto"}
+            aria-label="send message"
+          >
+            <CameraIcon />
+          </IconButton>
+        </div>
       </Paper>
     </div>
   );

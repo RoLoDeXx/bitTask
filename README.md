@@ -3,14 +3,13 @@
 Deployment of this app can be found [on this link](https://rolodexx.github.io/-Zomentum/)
 
 ### `Tech`
-- This project is built using React. For state management Hooks have been used.
+
 - Dummy contacts are generated using [JsonPlaceHolder](https://jsonplaceholder.typicode.com/)
 - Dummy messages are generated using [JsonPlaceHolder](https://jsonplaceholder.typicode.com/)
 - Dummy profile pictures are generated using [fakerJS](https://www.npmjs.com/package/faker)
 - UI is built using [material-ui](https://material-ui.com/)
 
 ### `Scripts`
-
 
 ### `npm start`
 

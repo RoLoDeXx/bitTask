@@ -38,13 +38,13 @@ const Contact = ({ name, imgSrc, id }) => {
 
   return (
     <div
-      className={"border-bottom p-3 " + classes.root}
+      className={"border-bottom px-3 py-2 " + classes.root}
       onClick={() => loadChat(id)}
     >
       <div className="d-flex align-items-start">
         <img className={classes.img} src={imgSrc} alt="logo" />
         <div className="ml-3 ">
-          <p className="m-0 font-montserrat">{name}</p>
+          <p className="m-0 font-montserrat">{name}'s class</p>
           <p className={"text-muted font-montserrat " + classes.tinyTxt}>
             {name.length % 4 === 0 ? (
               <span className={classes.online}>Online</span>

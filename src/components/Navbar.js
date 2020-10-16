@@ -29,7 +29,7 @@ export default function NavBar() {
               classes.title + " text-dark font-montserrat font-weight-bold"
             }
           >
-            TintChat
+            Ω λ XL9
           </Typography>
           {/* <IconButton
             edge="start"

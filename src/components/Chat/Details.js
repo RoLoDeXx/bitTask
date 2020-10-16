@@ -24,7 +24,7 @@ const Details = ({ name }) => {
         </Typography>
 
         <IconButton aria-label="search" onClick={handleCloseChat}>
-          <CloseOutlinedIcon />
+          <CloseOutlinedIcon className="text-danger" />
         </IconButton>
       </div>
       <Divider />

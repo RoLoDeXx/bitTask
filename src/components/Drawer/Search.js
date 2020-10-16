@@ -36,7 +36,7 @@ export default function Search() {
           e.preventDefault();
         }}
         className={classes.input}
-        placeholder="Search Tint"
+        placeholder="Search classes"
         inputProps={{ "aria-label": "search google maps" }}
         value={query}
         onChange={(e) => {

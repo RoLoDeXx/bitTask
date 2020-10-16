@@ -1,9 +1,10 @@
 import React, { useContext } from "react";
 import Actions from "./Actions";
 import Details from "./Details";
-import Message from "./Message";
 import { makeStyles } from "@material-ui/core/styles";
 import UserContext from "../../contexts/UserContext";
+import User from "./User";
+import YouTube from "react-youtube";
 
 const Chat = () => {
   const useStyles = makeStyles(() => ({
@@ -20,33 +21,31 @@ const Chat = () => {
   }));
   const classes = useStyles();
 
-  const { name, chats } = useContext(UserContext);
-  const renderChat = chats.map((chat) => {
-    if (!chat.byMe)
-      return (
-        <Message
-          sentByMe={chat.name.length % 2 === 0}
-          key={chat.id}
-          body={chat.name}
-        ></Message>
-      );
-    else
-      return (
-        <Message
-          sentByMe={chat.byMe}
-          key={Math.floor(Math.random() * 99999 + 50)}
-          body={chat.body}
-        ></Message>
-      );
-  });
+  const { name } = useContext(UserContext);
+  const opts = {
+    height: "640",
+    width: "100%",
+    playerVars: {
+      // https://developers.google.com/youtube/player_parameters
+      autoplay: 1,
+    },
+  };
 
   return name.length ? (
     <div className={"d-flex flex-column " + classes.chatWrap}>
-      <Details name={name}></Details>
+      <Details name={`${name}'s class`}></Details>
       <div className="flex-grow-1 h-100 overflow-auto chat-section">
-        {renderChat}
+        <div className="row m-0">
+          <div className=" col-lg-9">
+            <YouTube videoId="4HDSQz91hyE" opts={opts} />
+          </div>
+          <div className=" col-lg-3">
+            <User name="Samarth" />
+            <User name="Akshay" />
+          </div>
+        </div>
       </div>
-      <Actions></Actions>
+      <Actions />
     </div>
   ) : (
     <div className="d-flex flex-column justify-content-around h-100">
@@ -60,8 +59,7 @@ const Chat = () => {
           Things seem pretty lonely here.
         </h3>
         <p className="text-center font-montserrat">
-          {" "}
-          Tap on a contact to start a chat!
+          Tap on a contact to join a class!
         </p>
       </div>
     </div>
