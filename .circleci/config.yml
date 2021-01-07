@@ -1,10 +1,7 @@
-executor: core/node
-resource_class: large
-steps:
-  - attach_workspace:
-      at: ~/workspace
-  - run:
-      name: Build Frontend
-      command: |
-        cd ~/workspace/vanilla
-        npm run build
+version: 2.1
+orbs:
+  hello: circleci/hello-build@0.0.5
+workflows:
+  "Hello Workflow":
+    jobs:
+      - hello/hello-build
