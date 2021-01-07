@@ -1,4 +1,10 @@
-orbs:
-  node: circleci/node@4.0.0
-
-version: 2.1
+executor: core/node
+resource_class: large
+steps:
+  - attach_workspace:
+      at: ~/workspace
+  - run:
+      name: Build Frontend
+      command: |
+        cd ~/workspace/vanilla
+        npm run build
